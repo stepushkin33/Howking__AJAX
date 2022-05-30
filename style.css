@@ -12,7 +12,7 @@ form {
   margin-bottom: 20px;
 }
 
-.input-name {
+.input-name ,.input-id {
   width: 300px;
   font: inherit;
   letter-spacing: inherit;

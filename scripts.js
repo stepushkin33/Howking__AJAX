@@ -1,6 +1,8 @@
 const loadBtn = document.querySelector(".js-load");
+const loadAllBtn = document.querySelector(".js-load-all");
 const resultsContainer = document.querySelector(".js-results");
 const searchInput = document.querySelector(".js-input");
+const searchInputID = document.querySelector(".js-input-id");
 
 loadBtn.addEventListener("click",async function (evt) {
   const searchValue = searchInput.value.trim().toLowerCase();
@@ -15,3 +17,18 @@ loadBtn.addEventListener("click",async function (evt) {
             </div>`)
   );
 });
+
+
+
+loadAllBtn.addEventListener("click", async function (event) {
+  const searchValueID = searchInputID.value
+  axios.get("https://jsonplaceholder.typicode.com/posts")
+  .then(response => {
+    console.log(response.data);
+    resultsContainer.innerHTML = `<div class="response-container">
+                <p> ID: <span>${response.data[searchValueID].id}</span></p>
+                <p> Предстваление: <span>${response.data[searchValueID].title}</span><p>
+                <p> О себе: <span>${response.data[searchValueID].body}</span><p>
+            </div> <br/>`}
+  );
+  })

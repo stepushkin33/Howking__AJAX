@@ -1,0 +1,26 @@
+{
+  "dependencies": {
+    "axios": "^0.27.2"
+  },
+  "name": "howking__ajax",
+  "description": "",
+  "version": "1.0.0",
+  "main": "scripts.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stepushkin33/Howking__AJAX.git"
+  },
+  "author": "me",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stepushkin33/Howking__AJAX/issues"
+  },
+  "homepage": "https://github.com/stepushkin33/Howking__AJAX#readme",
+  "dependencies": {
+    "axios": "^0.27.2"
+  }
+}
