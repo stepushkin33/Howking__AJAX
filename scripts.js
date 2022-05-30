@@ -4,7 +4,7 @@ const resultsContainer = document.querySelector(".js-results");
 const searchInput = document.querySelector(".js-input");
 const searchInputID = document.querySelector(".js-input-id");
 
-loadBtn.addEventListener("click",async function (evt) {
+loadBtn.addEventListener("click", function (evt) {
   const searchValue = searchInput.value.trim().toLowerCase();
   fetch(`https://api.github.com/users/${searchValue}`)
       .then(response => response.json())
@@ -20,7 +20,7 @@ loadBtn.addEventListener("click",async function (evt) {
 
 
 
-loadAllBtn.addEventListener("click", async function (event) {
+loadAllBtn.addEventListener("click", function (event) {
   const searchValueID = searchInputID.value
   axios.get("https://jsonplaceholder.typicode.com/posts")
   .then(response => {
