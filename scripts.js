@@ -32,20 +32,19 @@ loadBtn.addEventListener("click", function (evt) {
 
 
 
-loadAllBtn.addEventListener("click", function (event) {
+loadAllBtn.addEventListener("click", async function (event) {
   event.preventDefault()
   const searchValueID = searchInputID.value
-  axios.get(`https://jsonplaceholder.typicode.com/posts/${searchValueID}`)
-  .then(({data}) => {
-    (resultsContainer.innerHTML = `<div class="response-container">
+  try {
+  const {data} = await axios.get(`https://jsonplaceholder.typicode.com/posts/${searchValueID}`)
+    resultsContainer.innerHTML = `<div class="response-container">
                 <p> ID: <span>${data.id}</span></p>
                 <p> Предстваление: <span>${data.title}</span><p>
                 <p> О себе: <span>${data.body}</span><p>
-            </div> <br/>`)
-          })
-  .catch(e => {
+            </div> <br/>`
+  }catch(e) {
     if(e.response.status === 404) {
       resultsContainer.innerHTML = `<div class="response-container">Пользователь не найден</div>`
     }
-  })
+  }
   })
